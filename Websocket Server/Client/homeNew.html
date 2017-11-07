@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rate Ticker</title>
+	<script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="css/home.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #D3D3D3;" >
+	<!-- <div id="mainDiv" class="plan-container" name="mainDiv" border="10px" style="border-style:solid;height:616px;width:821px;margin:0 auto;align:center;overflow:auto;background-color:#fff"> -->
+	<br>
+	<div id="mainDiv" class="plan-container" name="mainDiv">
+
+		<!-- <div style="border-style:none;height:60px;width:815px;margin:0 auto;align:center;overflow:auto;background-color:#54ccb5"><center><h3><b>WEBSOCKET DEMO</b></h3></center></div> -->
+		<div class="plan-header"><center><h2><b>RATE TICKER</b></h2></center></div>
+		
+		<!-- <div style="border-style:none;height:200px;width:815px;margin:0 auto;align:center;overflow:auto;background-color:#fff"> -->
+		<div >
+		<!-- <center><h3><b>Rate Feed Coming Soon</b></h3></center> -->
+			<table align="center" style="width:100%;">
+				<tr>
+					<td>
+						<div id="usdinr" name="usdinr" border="5px" style="border-style:none;height:123px;width:250px;margin:30px; auto;align:left;overflow:auto;background-color:#fff">
+						<!-- <div id="usdinr" name="usdinr" border="5px" style="margin:30px;"> -->
+							<table border="1" width="100%">
+								<tr>
+									<td colspan="2" bgcolor="#54ccb5"> <b><center>USDINR</center></b> </td>
+								</tr>
+								<tr>
+									<td bgcolor="#54ccb5"> <b><center>BUY</center></b> </td>
+									<td bgcolor="#54ccb5"> <b><center>SELL</center></b> </td>
+								</tr>
+								<tr >
+									<td rowspan="2" bgcolor="#E6F8F9"> <h2><b><center><span id="usdinr_buy" name="usdinr_buy">NA</span></center></b></h2> </td>
+									<td rowspan="2" bgcolor="#E6F8F9"> <h2><b><center><span id="usdinr_sell" name="usdinr_sell">NA</span></center></b></h2> </td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td>
+						<div id="eurusd" name="eurusd" border="5px" style="border-style:none;height:123px;width:250px;margin:15px; auto;align:left;overflow:auto;background-color:#fff">
+						<!-- <div id="eurusd" name="eurusd" border="5px" style="margin:30px;"> -->
+							<table border="1" width="100%">
+								<tr>
+									<td colspan="2" bgcolor="#54ccb5"> <b><center><span id='curr1_lbl' name='curr1_lbl'>EURUSD</span></center></b> </td>
+								</tr>
+								<tr>
+									<td bgcolor="#54ccb5"> <b><center>BUY</center></b> </td>
+									<td bgcolor="#54ccb5"> <b><center>SELL</center></b> </td>
+								</tr>
+								<tr >
+									<td rowspan="2" bgcolor="#E6F8F9"> <h2><b><center><span id="curr1_buy" name="curr1_buy">NA</span></center></b></h2> </td>
+									<td rowspan="2" bgcolor="#E6F8F9"> <h2><b><center><span id="curr1_sell" name="curr1_sell">NA</span></center></b></h2> </td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td>
+						<div id="aedinr" name="aedinr" border="5px" style="border-style:none;height:123px;width:250px;margin:30px; auto;align:left;overflow:auto;background-color:#fff">
+						<!-- <div id="aedinr" name="aedinr" border="5px" style="margin:30px;"> -->
+							<table border="1" width="100%">
+								<tr>
+									<td colspan="2" bgcolor="#54ccb5"> <b><center><span id='curr2_lbl' name='curr2_lbl'>AEDINR</span></center></b> </td>
+								</tr>
+								<tr>
+									<td bgcolor="#54ccb5"> <b><center>BUY</center></b> </td>
+									<td bgcolor="#54ccb5"> <b><center>SELL</center></b> </td>
+								</tr>
+								<tr >
+									<td rowspan="2" bgcolor="#E6F8F9"> <h2><b><center><span id="curr2_buy" name="curr2_buy">NA</span></center></b></h2> </td>
+									<td rowspan="2" bgcolor="#E6F8F9"> <h2><b><center><span id="curr2_sell" name="curr2_sell">NA</span></center></b></h2> </td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- <div id="userNm" name="userNm" style="border-style:none;height:60px;width:815px;margin:0 auto;align:center;overflow:auto;background-color:#54ccb5"></div> -->
+		<div class="plan-header-username" id="userNm" name="userNm" ><h3>UserName</h3></div>
+		
+		<div id="log" name="log" style="border-style:none;height:265px;width:910px;margin:0 auto;align:center;overflow:auto;background-color:#E6F8F9"></div>
+		<div id="log" name="log" ></div>
+		
+		<!-- <div style="border-style:none;height:32px;width:815px;margin:0 auto;align:center;overflow:auto;background-color:#fff"> -->
+		<div >
+			<!-- <input  type="text" style="width:89%;height:26px;" placeholder="Your Message Here!" id="txt" name="txt"> -->
+			<table style="width:100%">
+				<tr>
+					<td><input style="width:114.3%;height:30px;" class="form-control" placeholder="Your Message Here!" id="txt" name="txt" type="text"></td>
+					<td><button class="btn btn-warning" id="btnSend" name="btnSend" style="background-color: #FF8939;border-radius: 3px;color: #fff;text-align: center;float:right;width:30%;height:30px;"><b><span class="glyphicon glyphicon-envelope"></span></b></button></td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src="/client.js">
+		
+	</script>
+</body>
+</html>
